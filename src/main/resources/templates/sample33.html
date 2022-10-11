@@ -11,6 +11,7 @@
   </h3>
   <h3>ロール名：<div sec:authentication="principal.authorities"></div>
   </h3>
+  <div sec:authorize="hasRole('ROLE_RIKU')">あなたはユーザですね.</div>
   <div><a href="/logout">ログアウト</a></div>
 </body>
 

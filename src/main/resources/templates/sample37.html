@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/schema/security">
+
+</html>
 
 <head>
   <meta charset="utf-8">
@@ -6,5 +9,22 @@
 </head>
 
 <body>
+  <a href="/sample3/step8">入室(DI)</a><br>
+  <a href="/sample3/step9">入室(new)</a>
+
+  <div th:if="${room}">
+    <ul>
+      <li>RoomNo:[[${room.roomNo}]]</li>
+      <li th:each="user : ${room.users}">[[${user}]]</li>
+    </ul>
+  </div>
+
+  <div th:if="${new_room}">
+    <ul>
+      <li>RoomNo:[[${new_room.roomNo}]]</li>
+      <li th:each="user : ${new_room.users}">[[${user}]]</li>
+    </ul>
+  </div>
+
   <div><a href="/logout">ログアウト</a></div>
 </body>
